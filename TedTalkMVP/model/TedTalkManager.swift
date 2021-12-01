@@ -10,7 +10,9 @@ import Foundation
 enum ParseErrors: Error {
     case fileNotFound
     case invalidData
-    case decodingProblem(String)
+    case decodingDataIsCorrupted
+    case decodingErrorOnKey(String)
+    case decodingGeneralError(String)
 }
 
 class TedTalkManager {
@@ -24,17 +26,21 @@ class TedTalkManager {
             guard let myData = try?
                     Data(contentsOf: myUrl) else {
                 onCompletion(.failure(.invalidData))
+                print("The data is invalid")
                 return
             }
             do {
                 let talks = try JSONDecoder().decode([TedTalk].self, from: myData)
                 onCompletion(.success(talks))
             } catch DecodingError.dataCorrupted(_) {
-                onCompletion(.failure(.decodingProblem("Data corrupted")))
+                onCompletion(.failure(.decodingDataIsCorrupted))
+                print("Happened a problem decoding the data: Data corrupted")
             } catch DecodingError.keyNotFound(let codingKey, _) {
-                onCompletion(.failure(.decodingProblem(codingKey.stringValue)))
+                onCompletion(.failure(.decodingErrorOnKey(codingKey.stringValue)))
+                print("Happened a problem decoding the data: \(codingKey.stringValue)")
             } catch let error {
-                onCompletion(.failure(.decodingProblem(error.localizedDescription)))
+                onCompletion(.failure(.decodingGeneralError(error.localizedDescription)))
+                print("Happened a problem decoding the data: \(error.localizedDescription)")
             }
         }
     }

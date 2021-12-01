@@ -9,8 +9,8 @@ import Foundation
 
 class TedTalkPresenter: TedTalkPresenterProtocol{
     
+    let pickerRows: [String] = ["Event", "Main Speaker", "Title", "Name", "Description", "Any"]
     var view: TedTalkViewProtocol?
-    var parseError: ParseErrors? = nil
     var tedTalks: [TedTalk]? = []
     var filteredTalk: [TedTalk] = []{
         didSet{
@@ -25,25 +25,29 @@ class TedTalkPresenter: TedTalkPresenterProtocol{
     
     private func getTalks() {
         
-        TedTalkManager().parseFromJson( fileName: "tedtalks") {
+        TedTalkManager().parseFromJson(fileName: "tedTalk") {
             result in
             DispatchQueue.main.async {
                 switch result {
                 case .success(let talks):
                     self.tedTalks = talks
-                case .failure(let error):
-                    switch error {
-                    case .decodingProblem:
-                        self.parseError = error
-                    case .fileNotFound:
-                        self.parseError = error
-                    case .invalidData:
-                        self.parseError = error
+                    self.filteredTalk = talks
+                case .failure(_):
+                    DispatchQueue.main.async {
                         self.tedTalks = []
+                        print("there was an error")
                     }
                 }
             }
         }
+    }
+    
+    func getPickerRowsCount() -> Int {
+        return self.pickerRows.count
+    }
+    
+    func getPickerRow(index: Int) -> String {
+        return self.pickerRows[index]
     }
     
     func getFilteredTalkCount() -> Int {
@@ -54,15 +58,14 @@ class TedTalkPresenter: TedTalkPresenterProtocol{
         return self.filteredTalk[tedTalk]
     }
     
-    func filterTalk(filters: String, text: String) {
+    func filterTalk(filter: String, text: String) {
         self.filteredTalk = []
         tedTalks?.forEach({
             (talk) in
-            if talk.isFiltered(filters, input: text){
+            if talk.isFiltered(filter, input: text){
                 self.filteredTalk.append(talk)
             }
         })
     }
-    
 }
 
