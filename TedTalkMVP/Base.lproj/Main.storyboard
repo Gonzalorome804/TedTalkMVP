@@ -1,24 +1,119 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Home View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="HomeViewController" customModule="TedTalkMVP" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="0Ra-i3-Mlm">
+                                <rect key="frame" x="0.0" y="330.5" width="414" height="531.5"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="customCell" rowHeight="149" id="1ok-sD-a0a" customClass="CustomTableCellTedTalk" customModule="TedTalkMVP" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="24.5" width="414" height="149"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="1ok-sD-a0a" id="fDa-Mn-lYU">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="149"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tedTalkImagenIcon" translatesAutoresizingMaskIntoConstraints="NO" id="dZc-u7-fxG">
+                                                    <rect key="frame" x="5" y="5" width="165.5" height="139"/>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Eks-Ow-GeF">
+                                                    <rect key="frame" x="175.5" y="11" width="208.5" height="16"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="13"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iO2-8F-UNV">
+                                                    <rect key="frame" x="175.5" y="37" width="218.5" height="101"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="iO2-8F-UNV" firstAttribute="leading" secondItem="dZc-u7-fxG" secondAttribute="trailing" constant="5" id="BF3-Z7-FV2"/>
+                                                <constraint firstItem="dZc-u7-fxG" firstAttribute="leading" secondItem="fDa-Mn-lYU" secondAttribute="leading" constant="5" id="BVN-bE-who"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="iO2-8F-UNV" secondAttribute="bottom" id="ESf-eN-j62"/>
+                                                <constraint firstItem="dZc-u7-fxG" firstAttribute="width" secondItem="fDa-Mn-lYU" secondAttribute="width" multiplier="0.4" id="O6g-e5-N3t"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="Eks-Ow-GeF" secondAttribute="trailing" constant="10" id="ava-2i-S3y"/>
+                                                <constraint firstItem="Eks-Ow-GeF" firstAttribute="leading" secondItem="dZc-u7-fxG" secondAttribute="trailing" constant="5" id="fXA-tQ-NQR"/>
+                                                <constraint firstAttribute="bottom" secondItem="dZc-u7-fxG" secondAttribute="bottom" constant="5" id="gBF-fo-uPa"/>
+                                                <constraint firstItem="iO2-8F-UNV" firstAttribute="top" secondItem="Eks-Ow-GeF" secondAttribute="bottom" constant="10" id="pTr-16-CYA"/>
+                                                <constraint firstItem="dZc-u7-fxG" firstAttribute="top" secondItem="fDa-Mn-lYU" secondAttribute="top" constant="5" id="uxh-aA-4QW"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="iO2-8F-UNV" secondAttribute="trailing" id="xmf-zG-nYC"/>
+                                                <constraint firstItem="Eks-Ow-GeF" firstAttribute="top" secondItem="fDa-Mn-lYU" secondAttribute="topMargin" id="zKG-va-KjS"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="labelDescriptionCell" destination="iO2-8F-UNV" id="4MG-2i-Zru"/>
+                                            <outlet property="labelMainSpeakerCell" destination="Eks-Ow-GeF" id="JHJ-De-Oq4"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="7gH-op-YTn"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="Xxu-Yk-qQY"/>
+                                </connections>
+                            </tableView>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="jiM-u9-Vf1">
+                                <rect key="frame" x="0.0" y="44" width="414" height="51"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="cKW-gD-2dJ"/>
+                                </connections>
+                            </searchBar>
+                            <pickerView contentMode="scaleToFill" verticalHuggingPriority="249" translatesAutoresizingMaskIntoConstraints="NO" id="0aF-kR-0Ij">
+                                <rect key="frame" x="0.0" y="95" width="414" height="235.5"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="mSh-jX-8VM"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="YqH-7H-5W9"/>
+                                </connections>
+                            </pickerView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="0Ra-i3-Mlm" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="7ys-fa-d3d"/>
+                            <constraint firstItem="0aF-kR-0Ij" firstAttribute="top" secondItem="jiM-u9-Vf1" secondAttribute="bottom" id="D28-ZH-5A2"/>
+                            <constraint firstItem="jiM-u9-Vf1" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="GlC-7Q-Zcz"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="0Ra-i3-Mlm" secondAttribute="trailing" id="aLm-fk-hDt"/>
+                            <constraint firstItem="jiM-u9-Vf1" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="aUd-Of-Ma0"/>
+                            <constraint firstItem="0Ra-i3-Mlm" firstAttribute="height" secondItem="6Tk-OE-BBY" secondAttribute="height" multiplier="0.65" id="bdy-vT-ozH"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="0aF-kR-0Ij" secondAttribute="trailing" id="eJ3-TU-Rca"/>
+                            <constraint firstAttribute="trailing" secondItem="jiM-u9-Vf1" secondAttribute="trailing" id="eVW-yH-3Ln"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="0Ra-i3-Mlm" secondAttribute="bottom" id="mwi-Du-Jui"/>
+                            <constraint firstItem="0Ra-i3-Mlm" firstAttribute="top" secondItem="0aF-kR-0Ij" secondAttribute="bottom" id="xfC-uA-NgG"/>
+                            <constraint firstItem="0aF-kR-0Ij" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="zC2-6O-7jZ"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="SearchTedTalk" destination="jiM-u9-Vf1" id="Loc-QU-Lvi"/>
+                        <outlet property="TableTedTalk" destination="0Ra-i3-Mlm" id="HmA-zF-j7K"/>
+                        <outlet property="pickerTedTalk" destination="0aF-kR-0Ij" id="7sn-pH-xMG"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="-26.086956521739133" y="77.678571428571431"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="tedTalkImagenIcon" width="100" height="100"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>
