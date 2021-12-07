@@ -18,7 +18,6 @@ class DetailedTedTalkViewController: UIViewController{
     @IBOutlet weak var tedTalkWeb: WKWebView!
     
     var tedTalk: TedTalk? = nil
-    var tagString: String = "Tags: "
     
     func setTedTalk(talk: TedTalk){
         self.tedTalk = talk
@@ -31,13 +30,7 @@ class DetailedTedTalkViewController: UIViewController{
             
             labelTitleDetail.text = displayTedTalk.title
             tedTalkWeb.load(URLRequest(url: URL(string: displayTedTalk.url)!))
-            tagString = tagString + (displayTedTalk.tags[0])
-            
-            for tag in 1..<tedTalk!.tags.count {
-                tagString = tagString + ", \(displayTedTalk.tags[tag])"
-            }
-            
-            labelTagDetail.text = tagString
+            labelTagDetail.text = "Tags: \(displayTedTalk.tags.joined(separator: ", "))"
             let viewString = displayTedTalk.views as NSNumber
             labelOfViewDetail.text = "#of views: \(viewString.stringValue)"
             labelNameDetail.text = displayTedTalk.name

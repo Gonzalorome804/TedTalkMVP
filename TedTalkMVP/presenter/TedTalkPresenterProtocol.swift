@@ -9,7 +9,6 @@ import Foundation
 
 protocol TedTalkPresenterProtocol {
     
-    //var view: {get set}
     var tedTalks: [TedTalk]? {get set}
     var filteredTalk: [TedTalk] {get set}
     var view: TedTalkViewProtocol? {get set}
