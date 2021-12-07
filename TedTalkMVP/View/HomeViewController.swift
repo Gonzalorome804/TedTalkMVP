@@ -25,7 +25,7 @@ class HomeViewController: UIViewController, TedTalkViewProtocol {
     }
 }
 
-extension HomeViewController: UITableViewDataSource, UISearchBarDelegate, UIPickerViewDataSource, UIPickerViewDelegate{
+extension HomeViewController: UITableViewDataSource, UISearchBarDelegate, UIPickerViewDataSource, UIPickerViewDelegate, UITableViewDelegate{
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
@@ -62,5 +62,16 @@ extension HomeViewController: UITableViewDataSource, UISearchBarDelegate, UIPick
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         presenter.filterTalk(filter: pickerSelectedRow, text: searchText)
     }
+    func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
+        
+        performSegue(withIdentifier: "showDetail", sender: presenter.getFilteredTalk(for: indexPath.row))
+    }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showDetail",
+           let destinationViewController = segue.destination as? DetailedTedTalkViewController,
+           let selectedTedTalk = sender as? TedTalk {
+            destinationViewController.setTedTalk(talk: selectedTedTalk)
+        }
+    }
 }
