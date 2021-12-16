@@ -3,10 +3,11 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C53A0F168C6A39C19FC64F50 /* Pods_TedTalkMVP.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ADA9BC38F2329C0A451317B6 /* Pods_TedTalkMVP.framework */; };
 		FD2F400A2756AED4005BE814 /* TedTalk.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD2F40092756AED4005BE814 /* TedTalk.swift */; };
 		FD2F400D2756B0E8005BE814 /* TedTalkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD2F400C2756B0E8005BE814 /* TedTalkManager.swift */; };
 		FD2F40102756B3FA005BE814 /* TedTalkPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD2F400F2756B3FA005BE814 /* TedTalkPresenter.swift */; };
@@ -17,6 +18,7 @@
 		FD5D9B682756A7E000568205 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FD5D9B662756A7E000568205 /* LaunchScreen.storyboard */; };
 		FD5D9B702756A84F00568205 /* TedTalkPresenterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD5D9B6F2756A84F00568205 /* TedTalkPresenterProtocol.swift */; };
 		FD6F89F32757DF2100364F5E /* CustomTableCellTedTalk.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6F89F22757DF2100364F5E /* CustomTableCellTedTalk.swift */; };
+		FD783370276B794700CC07CB /* 35718-loader.json in Resources */ = {isa = PBXBuildFile; fileRef = FD78336F276B794700CC07CB /* 35718-loader.json */; };
 		FD906B492759A63800670885 /* DetailTedTalkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD906B482759A63800670885 /* DetailTedTalkViewController.swift */; };
 		FDCCA84A2756B8A500A03832 /* tedTalk.json in Resources */ = {isa = PBXBuildFile; fileRef = FDCCA8492756B8A500A03832 /* tedTalk.json */; };
 		FDD06BEE2757D3330001BC73 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDD06BED2757D3330001BC73 /* HomeViewController.swift */; };
@@ -24,6 +26,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1D2344C75A98F148A75977B2 /* Pods-TedTalkMVP.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TedTalkMVP.debug.xcconfig"; path = "Target Support Files/Pods-TedTalkMVP/Pods-TedTalkMVP.debug.xcconfig"; sourceTree = "<group>"; };
+		44758CAC161C17CB7674318C /* Pods-TedTalkMVP.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TedTalkMVP.release.xcconfig"; path = "Target Support Files/Pods-TedTalkMVP/Pods-TedTalkMVP.release.xcconfig"; sourceTree = "<group>"; };
+		ADA9BC38F2329C0A451317B6 /* Pods_TedTalkMVP.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TedTalkMVP.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FD2F40092756AED4005BE814 /* TedTalk.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TedTalk.swift; sourceTree = "<group>"; };
 		FD2F400C2756B0E8005BE814 /* TedTalkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TedTalkManager.swift; sourceTree = "<group>"; };
 		FD2F400F2756B3FA005BE814 /* TedTalkPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TedTalkPresenter.swift; sourceTree = "<group>"; };
@@ -36,6 +41,7 @@
 		FD5D9B692756A7E000568205 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FD5D9B6F2756A84F00568205 /* TedTalkPresenterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TedTalkPresenterProtocol.swift; sourceTree = "<group>"; };
 		FD6F89F22757DF2100364F5E /* CustomTableCellTedTalk.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableCellTedTalk.swift; sourceTree = "<group>"; };
+		FD78336F276B794700CC07CB /* 35718-loader.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "35718-loader.json"; sourceTree = "<group>"; };
 		FD906B482759A63800670885 /* DetailTedTalkViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailTedTalkViewController.swift; sourceTree = "<group>"; };
 		FDCCA8492756B8A500A03832 /* tedTalk.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = tedTalk.json; sourceTree = "<group>"; };
 		FDD06BED2757D3330001BC73 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -47,12 +53,30 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C53A0F168C6A39C19FC64F50 /* Pods_TedTalkMVP.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		47F6E7A78CC1533D893A282F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				ADA9BC38F2329C0A451317B6 /* Pods_TedTalkMVP.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B862D6175858F55DB2198D82 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				1D2344C75A98F148A75977B2 /* Pods-TedTalkMVP.debug.xcconfig */,
+				44758CAC161C17CB7674318C /* Pods-TedTalkMVP.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		FD2F400B2756B0C4005BE814 /* model */ = {
 			isa = PBXGroup;
 			children = (
@@ -76,6 +100,8 @@
 			children = (
 				FD5D9B5A2756A7DE00568205 /* TedTalkMVP */,
 				FD5D9B592756A7DE00568205 /* Products */,
+				B862D6175858F55DB2198D82 /* Pods */,
+				47F6E7A78CC1533D893A282F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -90,6 +116,7 @@
 		FD5D9B5A2756A7DE00568205 /* TedTalkMVP */ = {
 			isa = PBXGroup;
 			children = (
+				FD78336F276B794700CC07CB /* 35718-loader.json */,
 				FDDCCFB42756C8E700F6DDD4 /* View */,
 				FD2F400E2756B3E3005BE814 /* presenter */,
 				FD2F400B2756B0C4005BE814 /* model */,
@@ -122,9 +149,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = FD5D9B6C2756A7E000568205 /* Build configuration list for PBXNativeTarget "TedTalkMVP" */;
 			buildPhases = (
+				3CF51073C2CDC9A0529D8C82 /* [CP] Check Pods Manifest.lock */,
 				FD5D9B542756A7DE00568205 /* Sources */,
 				FD5D9B552756A7DE00568205 /* Frameworks */,
 				FD5D9B562756A7DE00568205 /* Resources */,
+				E6BE53163A9BD51EF41486F8 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -173,6 +202,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FD5D9B682756A7E000568205 /* LaunchScreen.storyboard in Resources */,
+				FD783370276B794700CC07CB /* 35718-loader.json in Resources */,
 				FDCCA84A2756B8A500A03832 /* tedTalk.json in Resources */,
 				FD5D9B652756A7E000568205 /* Assets.xcassets in Resources */,
 				FD5D9B632756A7DE00568205 /* Main.storyboard in Resources */,
@@ -180,6 +210,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		3CF51073C2CDC9A0529D8C82 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-TedTalkMVP-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E6BE53163A9BD51EF41486F8 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TedTalkMVP/Pods-TedTalkMVP-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TedTalkMVP/Pods-TedTalkMVP-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-TedTalkMVP/Pods-TedTalkMVP-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		FD5D9B542756A7DE00568205 /* Sources */ = {
@@ -339,11 +411,13 @@
 		};
 		FD5D9B6D2756A7E000568205 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1D2344C75A98F148A75977B2 /* Pods-TedTalkMVP.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 3WV4R9KHGF;
+				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = TedTalkMVP/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -358,11 +432,13 @@
 		};
 		FD5D9B6E2756A7E000568205 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 44758CAC161C17CB7674318C /* Pods-TedTalkMVP.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 3WV4R9KHGF;
+				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = TedTalkMVP/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

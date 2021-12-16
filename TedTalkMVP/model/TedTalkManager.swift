@@ -8,6 +8,7 @@
 import Foundation
 
 enum ParseErrors: Error {
+    case wrongURL
     case fileNotFound
     case invalidData
     case decodingDataIsCorrupted
@@ -16,22 +17,21 @@ enum ParseErrors: Error {
 }
 
 class TedTalkManager {
-    func parseFromJson(fileName: String, onCompletion: @escaping (Result<[TedTalk], ParseErrors>) -> Void) {
-        DispatchQueue.global(qos: .background).async {
-            let url = Bundle.main.url(forResource: fileName, withExtension: "json")
-            guard let myUrl = url else {
-                onCompletion(.failure(.fileNotFound))
-                return
-            }
-            guard let myData = try?
-                    Data(contentsOf: myUrl) else {
+    
+    func retrieveFromServer(onCompletion: @escaping (Result<[TedTalk], ParseErrors>) -> Void){
+        let url = URL(string: "https://raw.githubusercontent.com/Globant-Academy-iOS/iOS_Academy_base_project/main/Ted%20Talk/Ted%20Talk/Assets/tedTalks.json")
+        guard let myURL = url else {
+            onCompletion(.failure(.wrongURL))
+            return
+        }
+        let task = URLSession.shared.dataTask(with: myURL) {(myData, response, error) in
+            guard let receivedData = myData else{
                 onCompletion(.failure(.invalidData))
-                print("The data is invalid")
                 return
             }
             do {
-                let talks = try JSONDecoder().decode([TedTalk].self, from: myData)
-                onCompletion(.success(talks))
+                let tedTalks = try JSONDecoder().decode([TedTalk].self, from: receivedData)
+                onCompletion(.success(tedTalks))
             } catch DecodingError.dataCorrupted(_) {
                 onCompletion(.failure(.decodingDataIsCorrupted))
                 print("Happened a problem decoding the data: Data corrupted")
@@ -42,6 +42,9 @@ class TedTalkManager {
                 onCompletion(.failure(.decodingGeneralError(error.localizedDescription)))
                 print("Happened a problem decoding the data: \(error.localizedDescription)")
             }
+           
         }
+        task.resume()
     }
+    
 }

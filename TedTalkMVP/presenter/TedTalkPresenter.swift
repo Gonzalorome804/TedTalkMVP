@@ -25,7 +25,7 @@ class TedTalkPresenter: TedTalkPresenterProtocol{
     
     private func getTalks() {
         
-        TedTalkManager().parseFromJson(fileName: "tedTalk") {
+        TedTalkManager().retrieveFromServer() {
             result in
             DispatchQueue.main.async {
                 switch result {
