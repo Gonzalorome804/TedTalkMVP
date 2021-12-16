@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import Lottie
+
 
 class HomeViewController: UIViewController, TedTalkViewProtocol {
     
@@ -13,15 +15,30 @@ class HomeViewController: UIViewController, TedTalkViewProtocol {
     @IBOutlet weak var pickerTedTalk: UIPickerView!
     @IBOutlet weak var SearchTedTalk: UISearchBar!
     
+    let animationLoader = AnimationView(name: "35718-loader")
     private var pickerSelectedRow = ""
     lazy var presenter: TedTalkPresenterProtocol = TedTalkPresenter(view: self as TedTalkViewProtocol)
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupAnimationLoader()
     }
     
     func reloadData() {
         TableTedTalk.reloadData()
+        stopAnimationLoader()
+    }
+    
+    func setupAnimationLoader(){
+        animationLoader.frame = CGRect(x: 0, y: 0, width: 125, height: 125)
+        animationLoader.center = self.view.center
+        animationLoader.contentMode = .scaleAspectFit
+        view.addSubview(animationLoader)
+        animationLoader.play()
+        animationLoader.loopMode = .loop
+    }
+    func stopAnimationLoader(){
+        animationLoader.isHidden = true
     }
 }
 
@@ -49,7 +66,6 @@ extension HomeViewController: UITableViewDataSource, UISearchBarDelegate, UIPick
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
         let talk = presenter.getFilteredTalk(for: indexPath.row)
         var cell = tableView.dequeueReusableCell(withIdentifier: "customCell", for: indexPath) as? CustomTableCellTedTalk
         if cell == nil {
@@ -75,3 +91,4 @@ extension HomeViewController: UITableViewDataSource, UISearchBarDelegate, UIPick
         }
     }
 }
+

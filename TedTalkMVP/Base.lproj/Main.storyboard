@@ -82,6 +82,14 @@
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="YqH-7H-5W9"/>
                                 </connections>
                             </pickerView>
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ri2-og-uY8" customClass="AnimationView" customModule="Lottie">
+                                <rect key="frame" x="7" y="248" width="400" height="400"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="400" id="MQS-Lj-Yrj"/>
+                                    <constraint firstAttribute="width" constant="400" id="of2-be-Kt0"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -89,6 +97,8 @@
                             <constraint firstItem="0Ra-i3-Mlm" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="7ys-fa-d3d"/>
                             <constraint firstItem="0aF-kR-0Ij" firstAttribute="top" secondItem="jiM-u9-Vf1" secondAttribute="bottom" id="D28-ZH-5A2"/>
                             <constraint firstItem="jiM-u9-Vf1" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="GlC-7Q-Zcz"/>
+                            <constraint firstItem="Ri2-og-uY8" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Wrl-bO-pZr"/>
+                            <constraint firstItem="Ri2-og-uY8" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="YKT-Mz-GsA"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="0Ra-i3-Mlm" secondAttribute="trailing" id="aLm-fk-hDt"/>
                             <constraint firstItem="jiM-u9-Vf1" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="aUd-Of-Ma0"/>
                             <constraint firstItem="0Ra-i3-Mlm" firstAttribute="height" secondItem="6Tk-OE-BBY" secondAttribute="height" multiplier="0.65" id="bdy-vT-ozH"/>
